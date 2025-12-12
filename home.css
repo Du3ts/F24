@@ -1,4 +1,4 @@
-/* setting the theme default browser styles */
+/*setting the theme default browser styles*/
 body{
     margin: 0; /* remove default margin around the page */
     font-family: 'Segoe UI', Arial, sans-serif; /* clean readable font */
@@ -6,7 +6,7 @@ body{
     color: #333; 
 }
 
-/* Header section at the very top */
+/*Header section at the very top*/
 header{
     background-color: #a3c9a8; /* soft green to match environment theme */
     text-align: center; /* center the title and tagline */
@@ -16,20 +16,20 @@ header{
 }
 
 header h1{
-    margin: 0; /* removing default spacing */
+    margin: 0; /*removing default spacing*/
     font-size: 2em; 
 }
 
 header p{
-    margin: 5px 0 0; /* small spacing above tagline */
+    margin: 5px 0 0; /*small spacing above tagline*/
     font-size: 1.1em;
 }
 
 /*top right corner navigation buttons inside header */
 .top-buttons{
     position: absolute; /*the position is relative to the header*/
-    top: 20px; /*distance from the top */
-    right: 20px;/*distance from right*/
+    top: 20px; /*the space from the top */
+    right: 20px;/*the space from right*/
 }
 
 
@@ -48,13 +48,13 @@ header p{
     color: white;
 }
 
-/* Controls section: search bar + filters + sort */
+/*Controls section includes search bar + filters + sort section*/
 .controls{
-    display: flex; /* placing elements side by side */
-    flex-direction: column; /* i stack vertically */
-    align-items: center; /* centering everything horizontally */
+    display: flex; /*placing elements side by side*/
+    flex-direction: column; /*i stack the contents vertically*/
+    align-items: center; 
     padding: 20px;
-    background-color: #e8f0ea; /* very light green background to match the theme*/
+    background-color: #e8f0ea; 
 }
 
 #searchBar{
@@ -74,13 +74,13 @@ header p{
     margin: 5px;
     padding: 8px 15px;
     border: none;
-    border-radius: 20px; /* pill-shaped buttons */
-    background-color: #d4e9d7; /* light green background */
+    border-radius: 20px; 
+    background-color: #d4e9d7; 
     cursor: pointer;
 }
 
 .filters button:hover{
-    background-color: #4CAF50; /* darker green on hover */
+    background-color: #4CAF50; 
     color: white;
 }
 
@@ -95,28 +95,28 @@ header p{
     border: 1px solid #ccc;
 }
 
-/* Item list section: grid of cards */
+/*Item list section: grid of cards*/
 .item-list{
-    display: grid; /* use CSS grid for layout */
+    display: grid; /*using CSS grid for layout*/
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    /* responsive: as many columns as fit, each at least 250px wide */
-    gap: 20px; /* space between cards */
+    /*this makes the card fit as many columns as it is, each at least 250px wide*/
+    gap: 20px; /*space between cards*/
     padding: 20px;
 }
 
 /* Each item card */
 .item-card{
-    background-color: white; /* card background */
-    border-radius: 15px; /* rounded corners */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
+    background-color: white; 
+    border-radius: 15px; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
     padding: 15px;
-    text-align: center; /* center text inside card */
+    text-align: center; /*centers text inside card*/
 }
 
 /* Images inside cards */
 .item-card img{
-    width: 100%; /* image fills card width */
-    height: 180px; /* fixed height for consistency */
+    width: 100%; 
+    height: 180px; 
     object-fit: cover; /* crop image nicely */
     border-radius: 12px; /* rounded image corners */
 }
@@ -124,7 +124,7 @@ header p{
 /* Category tag */
 .category{
     display: inline-block;
-    background-color: #f0c987; /* earthy accent color */
+    background-color: #f0c987; 
     padding: 5px 10px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -144,5 +144,5 @@ header p{
 }
 
 .claim-btn:hover {
-    background-color: #45a049; /* darker green on hover */
+    background-color: #45a049;
 }
