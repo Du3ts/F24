@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map view in ShareCircle</title>
     <link rel="stylesheet" href="map.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
     <header>
@@ -24,7 +29,7 @@
         <h2>Nearby Shared Resources</h2>
 
         <!---google map placeholder input section-->
-        <div id="map-placeholder">
+        <div id="map" style="height:400px; width:100%;">
             <!-------------------------------------------------------->
             <!--This will be replaced with Google Maps via JS later--->
             <!-------------------------------------------------------->
@@ -44,6 +49,39 @@
         </div>
 
     </main>
+    <script>
+  // setting the map with a default view
+  var map = L.map('map').setView([1.3521, 103.8198], 12);
+
+  // Loading free OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Asking the  browser for the --->your location
+  map.locate({setView: true, maxZoom: 16});
+
+  // When location is found, setiing  a marker
+  map.on('locationfound', function(e) {
+    L.marker(e.latlng).addTo(map)
+      .bindPopup("You are here").openPopup();
+  });
+
+  // This is to Handle location error
+  map.on('locationerror', function() {
+    alert("Location access denied or unavailable.");
+  });
+
+  // setting random category markers near the your location
+  var categories = ["Food", "Clothes", "Household", "Others"];
+  categories.forEach(function(cat) {
+    var lat = 1.3521 + (Math.random() - 0.5) * 0.1;
+    var lng = 103.8198 + (Math.random() - 0.5) * 0.1;
+    L.marker([lat, lng]).addTo(map)
+      .bindPopup(cat);
+  });
+
+</script>
 
     
 </body>
