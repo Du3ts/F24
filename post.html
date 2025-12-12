@@ -46,11 +46,21 @@
 
             <!---setting up the forms btn-->
             <div class="form-buttons">
-                <button type="button" onclick="window.location.href='home.html'">Cancel</button>
-                <button type="submit" onclick="window.location.href='home.html'">Post Item</button>
+                <button type="button" onclick="location.href='home.html'">Cancel</button>
+                <button type="submit">Post Item</button>
                 
             </div>
         </form>
+        <script>
+            let submitForm = document.getElementById("postForm");
+            loginForm.addEventListener("submit", (submitForm) => { submitForm.preventDefault();
+                let title = document.getElementById("title");
+                let description = document.getElementById("description");
+                let category = document.getElementById("category");
+                let address = document.getElementById("address");
+                let imageUrl = document.getElementById("imageUrl");
+            })
+        </script>
     </main>
     
 </body>
